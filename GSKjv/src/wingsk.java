@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 public class wingsk extends JFrame {
 	
@@ -40,6 +41,7 @@ public class wingsk extends JFrame {
 	}
 
 	public wingsk() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(wingsk.class.getResource("/com/sun/java/swing/plaf/windows/icons/Warn.gif")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 251, 229);
 		contentPane = new JPanel();
