@@ -2,16 +2,20 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 public class wingsk extends JFrame {
-
+	
 	/**
 	 * 
 	 */
@@ -21,7 +25,8 @@ public class wingsk extends JFrame {
 	private JTextField txt2;
 	private JTextField txt3;	
 	private JButton btnExit;
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
+		UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
