@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JLabel;
@@ -25,12 +26,14 @@ import javax.swing.JSeparator;
 import java.awt.Label;
 import java.awt.Font;
 
+import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
 import java.awt.Toolkit;
 public class Win {
 private	JLabel lblNewLabel;
@@ -42,6 +45,7 @@ JTextField textField;
 JRadioButton rdn;
 JCheckBox check;
 String idEquipo = "_";
+
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 		UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -66,7 +70,7 @@ String idEquipo = "_";
 		frmFilterLogCalamp = new JFrame();
 		frmFilterLogCalamp.setIconImage(Toolkit.getDefaultToolkit().getImage(Win.class.getResource("/resources/light-bulb.png")));
 		//frmFilterLogCalamp.setIconImage(Toolkit.getDefaultToolkit().getImage(Win.class.getResource("/javax/swing/plaf/metal/icons/ocean/newFolder.gif")));
-		frmFilterLogCalamp.setTitle("Filter Log Calamp v2.0");
+		frmFilterLogCalamp.setTitle("Filtro Log Calamp v4.0");
 		frmFilterLogCalamp.setResizable(false);
 		frmFilterLogCalamp.setBounds(100, 100, 502, 194);
 		frmFilterLogCalamp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,7 +95,7 @@ String idEquipo = "_";
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					idEquipo=textField.getText();
-					label.setText("WAIT...........");
+					label.setText("Procesando......");
 					// Open the file INPUT
 					File file = new File(selectedFile.toString());
 					FileInputStream fstream = new FileInputStream(file);
@@ -172,5 +176,6 @@ String idEquipo = "_";
 		check = new JCheckBox("Filtro IdEquipo");
 		check.setBounds(311, 59, 126, 23);
 		frmFilterLogCalamp.getContentPane().add(check);
+	
 	}
 }
